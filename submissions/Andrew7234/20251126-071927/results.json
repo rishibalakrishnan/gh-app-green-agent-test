@@ -1,0 +1,30 @@
+[
+  {
+    "id": "019abee6-6e45-79a1-a09c-8ca8f622cf3a",
+    "role": "pro_debater",
+    "scores": {
+      "emotional_appeal": 0.8,
+      "argument_clarity": 0.9,
+      "argument_arrangement": 0.9,
+      "relevance_to_topic": 1.0,
+      "total_score": 3.6
+    }
+  },
+  {
+    "id": "019abeeb-2c07-7af1-91dc-8bc2e8e45ed9",
+    "role": "con_debater",
+    "scores": {
+      "emotional_appeal": 0.9,
+      "argument_clarity": 0.9,
+      "argument_arrangement": 0.9,
+      "relevance_to_topic": 1.0,
+      "total_score": 3.7
+    }
+  },
+  {
+    "winner": "con_debater"
+  },
+  {
+    "reason": "Both debaters presented exceptionally strong and well-reasoned arguments, making this a very close debate. Both demonstrated high clarity, logical arrangement, and relevance to the topic. The Pro side effectively highlighted LeBron's unparalleled longevity, all-around statistical superiority, and significant impact beyond the court, arguing that his sustained excellence and ability to elevate weaker teams make him the GOAT. The Pro's attempt to contextualize Jordan's perfect Finals record by emphasizing supporting cast and opposition quality was a strong point. However, the Con side narrowly edged out the Pro due to its slightly more impactful emotional appeal and its robust defense of Michael Jordan's unparalleled peak dominance, perfect championship record, and legendary 'killer instinct'. The Con effectively countered Pro's attempts to diminish Jordan's Finals record by emphasizing the difficulty of achieving a 6-0 record and defeating legitimate contenders. The Con's focus on 'winning championships' as the ultimate measure, combined with Jordan's perfect Finals record and consistent elevation in clutch moments, resonated strongly. While LeBron's journey with weaker teams is commendable, the Con successfully framed Jordan's flawless Finals record as an unmatched testament to his greatness. The 'eye test' and intangible factor also added a compelling, albeit less quantifiable, dimension to Con's argument that was well-articulated."
+  }
+]
