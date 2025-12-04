@@ -9,6 +9,15 @@ on:
         required: false
         default: './scenario.toml'
         type: string
+      leaderboard_repo:
+        description: 'Leaderboard repository (owner/repo)'
+        required: true
+        type: string
+      leaderboard_ref:
+        description: 'Leaderboard ref (branch/tag)'
+        required: false
+        default: 'main'
+        type: string
     secrets:
       GOOGLE_API_KEY:
         required: false
@@ -25,24 +34,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug - GitHub context
-        run: |
-          echo "github.repository: ${{ github.repository }}"
-          echo "github.workflow_ref: ${{ github.workflow_ref }}"
-          echo "github.action_repository: ${{ github.action_repository }}"
-          echo "github.action_ref: ${{ github.action_ref }}"
-
-      - name: Parse leaderboard repo from workflow ref
-        id: leaderboard
-        run: |
-          # github.workflow_ref: "owner/repo/.github/workflows/file.yml@ref"
-          FULL_REF="${{ github.workflow_ref }}"
-          REPO=$(echo "$FULL_REF" | cut -d'/' -f1,2)
-          REF=$(echo "$FULL_REF" | cut -d'@' -f2)
-          echo "repo=$REPO" >> $GITHUB_OUTPUT
-          echo "ref=$REF" >> $GITHUB_OUTPUT
-          echo "Leaderboard: $REPO @ $REF"
-
       - name: Checkout caller repository
         uses: actions/checkout@v4
         with:
@@ -51,27 +42,9 @@ jobs:
       - name: Checkout leaderboard repository
         uses: actions/checkout@v4
         with:
-          repository: ${{ steps.leaderboard.outputs.repo }}
-          ref: ${{ steps.leaderboard.outputs.ref }}
+          repository: ${{ inputs.leaderboard_repo }}
+          ref: ${{ inputs.leaderboard_ref }}
           path: leaderboard
-
-      - name: Debug - Verify checkouts
-        run: |
-          echo "=== Parsed values ==="
-          echo "Leaderboard repo: ${{ steps.leaderboard.outputs.repo }}"
-          echo "Leaderboard ref: ${{ steps.leaderboard.outputs.ref }}"
-          echo ""
-          echo "=== Directory structure ==="
-          ls -la
-          echo ""
-          echo "=== purple-agent contents ==="
-          ls -la purple-agent/ || echo "purple-agent directory missing!"
-          echo ""
-          echo "=== leaderboard contents ==="
-          ls -la leaderboard/ || echo "leaderboard directory missing!"
-          echo ""
-          echo "=== Looking for generate_compose.py ==="
-          ls -la leaderboard/generate_compose.py || echo "generate_compose.py not found!"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -133,8 +106,8 @@ jobs:
           cat > output/manifest.json << EOF
           {
             "version": "1.0",
-            "target_leaderboard": "${{ steps.leaderboard.outputs.repo }}",
-            "leaderboard_ref": "${{ steps.leaderboard.outputs.ref }}",
+            "target_leaderboard": "${{ inputs.leaderboard_repo }}",
+            "leaderboard_ref": "${{ inputs.leaderboard_ref }}",
             "purple_agent_repo": "${{ github.repository }}",
             "purple_agent_owner": "${{ github.repository_owner }}",
             "run_id": "${{ github.run_id }}",
@@ -168,7 +141,7 @@ jobs:
         run: |
           echo "## ✅ Assessment Complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Results uploaded. If the AgentBeats App is installed, a PR will be opened on [\`${{ steps.leaderboard.outputs.repo }}\`](https://github.com/${{ steps.leaderboard.outputs.repo }})." >> $GITHUB_STEP_SUMMARY
+          echo "Results uploaded. If the AgentBeats App is installed, a PR will be opened on [\`${{ inputs.leaderboard_repo }}\`](https://github.com/${{ inputs.leaderboard_repo }})." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
           cat purple-agent/output/results.json >> $GITHUB_STEP_SUMMARY
