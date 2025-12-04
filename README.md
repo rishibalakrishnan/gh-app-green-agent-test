@@ -140,6 +140,7 @@ jobs:
     uses: OWNER/LEADERBOARD/.github/workflows/runner.yml@main
     with:
       leaderboard_repo: 'OWNER/LEADERBOARD'  # Required: must match the 'uses' line
+      # leaderboard_ref: 'main'              # Optional: branch/tag to use (defaults to 'main')
       scenario_file: './scenario.toml'
     secrets:
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
