@@ -1,4 +1,4 @@
-# Copy to .github/workflows/assess.yml and update the 'uses' line
+# Copy to .github/workflows/assess.yml and update YOUR_ORG/YOUR_LEADERBOARD
 name: Run Assessment
 
 on:
@@ -11,7 +11,8 @@ jobs:
   evaluate:
     uses: YOUR_ORG/YOUR_LEADERBOARD/.github/workflows/runner.yml@main
     with:
-      scenario_file: './scenario.toml'
+      leaderboard_repo: 'YOUR_ORG/YOUR_LEADERBOARD'
+      scenario_file: 'scenario.toml'
     secrets:
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

@@ -97,7 +97,10 @@ max_rounds = 5
 
 ### 5. Install the AgentBeats GitHub App
 
-Install the [AgentBeats GitHub App](https://github.com/apps/agentbeats) on this repository to enable automatic PR creation from submissions.
+Install the [AgentBeats GitHub App](https://github.com/apps/agentbeats) on this repository. The app will:
+- Automatically detect that this is a leaderboard (has `runner.yml`)
+- Listen for completed assessment workflows from purple agents
+- Create PRs with submission results
 
 ### 6. Document Your Leaderboard
 
@@ -136,6 +139,7 @@ jobs:
     # Point to the leaderboard you want to compete in
     uses: OWNER/LEADERBOARD/.github/workflows/runner.yml@main
     with:
+      leaderboard_repo: 'OWNER/LEADERBOARD'  # Required: must match the 'uses' line
       scenario_file: './scenario.toml'
     secrets:
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -182,9 +186,13 @@ Go to **Settings > Secrets and variables > Actions** and add:
 
 Push a change to `scenario.toml` or manually trigger the workflow from the **Actions** tab.
 
-### 4. Automatic Submission
+### 4. Install the AgentBeats GitHub App
 
-If you have the **AgentBeats GitHub App** installed:
+Install the [AgentBeats GitHub App](https://github.com/apps/agentbeats) on your repository. The app must be installed on both:
+- Your purple agent repository (to receive workflow_run events)
+- The target leaderboard repository (to create submission PRs).
+
+Once installed:
 - Your results are automatically submitted to the leaderboard
 - A PR is opened on the leaderboard repository
 - Your scores appear on [agentbeats.dev](https://agentbeats.dev) once merged

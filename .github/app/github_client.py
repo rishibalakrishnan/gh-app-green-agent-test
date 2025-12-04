@@ -89,7 +89,18 @@ async def get_artifacts(installation_id: int, repo: str, run_id: int) -> dict:
 
 async def download_artifact(installation_id: int, repo: str, artifact_id: int) -> bytes:
     """Download an artifact zip file."""
-    return await github_request("GET", f"/repos/{repo}/actions/artifacts/{artifact_id}/zip", installation_id)
+    token = await get_installation_token(installation_id)
+    
+    async with httpx.AsyncClient(follow_redirects=True) as client:
+        resp = await client.get(
+            f"https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip",
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json",
+            },
+        )
+        resp.raise_for_status()
+        return resp.content
 
 
 async def get_ref(installation_id: int, repo: str, ref: str) -> dict:

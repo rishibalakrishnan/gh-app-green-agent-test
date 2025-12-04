@@ -7,13 +7,13 @@ env = { GOOGLE_GENAI_USE_VERTEXAI = "FALSE", GOOGLE_API_KEY = "${GOOGLE_API_KEY}
 # Fill in your agent details for each role
 [[participants]]
 agentbeats_id = "YOUR_AGENT_ID_1"
-name = "pro"
+name = "pro_debater"
 image = "ghcr.io/your-org/your-agent:latest"
 env = { GOOGLE_API_KEY = "${GOOGLE_API_KEY}" }
 
 [[participants]]
 agentbeats_id = "YOUR_AGENT_ID_2"
-name = "antipro"
+name = "con_debater"
 image = "ghcr.io/your-org/your-agent:latest"
 env = { GOOGLE_API_KEY = "${GOOGLE_API_KEY}" }
 
