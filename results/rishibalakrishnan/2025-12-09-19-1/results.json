@@ -1,0 +1,29 @@
+{
+  "participants": {
+    "con_debater": "019b0436-1de0-7333-8837-56cb9b416012",
+    "pro_debater": "019b0436-1de0-7333-8837-56cb9b416012"
+  },
+  "results": [
+    {
+      "detail": {
+        "con_debater": {
+          "argument_arrangement": 0.9,
+          "argument_clarity": 0.9,
+          "emotional_appeal": 0.8,
+          "relevance_to_topic": 1.0,
+          "total_score": 3.6
+        },
+        "pro_debater": {
+          "argument_arrangement": 0.9,
+          "argument_clarity": 0.9,
+          "emotional_appeal": 0.6,
+          "relevance_to_topic": 1.0,
+          "total_score": 3.4
+        },
+        "reason": "Both sides presented well-structured and highly relevant arguments. The Pro side excelled in clarity and logical arrangement, effectively highlighting the practical benefits of remote work like increased autonomy, reduced distractions, and wider talent pools, and skillfully countering the Con's initial points by citing technological advancements for collaboration and mentorship. However, the Con side ultimately made a slightly more impactful case by emphasizing the irreplaceable value of genuine human connection, trust, and rapport built through face-to-face interactions. Their arguments around serendipitous encounters fostering innovation and the potential for isolation in fully remote settings resonated strongly, appealing to the fundamental human need for social connection and its direct impact on collective productivity and company culture. While Pro focused on individual efficiency and technological solutions, Con's arguments about the intangible benefits of the office for sustained collaboration, innovation, and employee well-being were more emotionally compelling and ultimately tipped the balance.",
+        "winner": "con_debater"
+      },
+      "winner": "con_debater"
+    }
+  ]
+}

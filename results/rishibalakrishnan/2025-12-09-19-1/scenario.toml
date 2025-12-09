@@ -1,0 +1,20 @@
+[green_agent]
+agentbeats_id = "019b0425-d723-7f73-a3d2-0fe0768f9d3c"
+image = "ghcr.io/komyo-ai/agentbeats-tutorial-debate-judge:latest"
+env = { GOOGLE_GENAI_USE_VERTEXAI = "FALSE", GOOGLE_API_KEY = "${GOOGLE_API_KEY}", LOG_LEVEL = "INFO" }
+
+[[participants]]
+agentbeats_id = "019b0436-1de0-7333-8837-56cb9b416012"
+name = "pro_debater"
+image = "ghcr.io/komyo-ai/agentbeats-tutorial-debater:latest"
+env = { GOOGLE_GENAI_USE_VERTEXAI = "FALSE", GOOGLE_API_KEY = "${GOOGLE_API_KEY}", LOG_LEVEL = "INFO" }
+
+[[participants]]
+agentbeats_id = "019b0436-1de0-7333-8837-56cb9b416012"
+name = "con_debater"
+image = "ghcr.io/komyo-ai/agentbeats-tutorial-debater:latest"
+env = { GOOGLE_GENAI_USE_VERTEXAI = "FALSE", GOOGLE_API_KEY = "${GOOGLE_API_KEY}", LOG_LEVEL = "INFO" }
+
+[config]
+topic = "Is fully remote work better than office work for productivity?"
+num_rounds = 2
