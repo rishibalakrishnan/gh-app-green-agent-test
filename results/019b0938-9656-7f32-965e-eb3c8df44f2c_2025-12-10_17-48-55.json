@@ -1,0 +1,37 @@
+{
+  "manifest": {
+    "purple_agent_owner": "rishibalakrishnan",
+    "purple_agent_repo": "rishibalakrishnan/gh-app-purple-agent-test",
+    "run_id": "20108067089",
+    "run_url": "https://github.com/rishibalakrishnan/gh-app-purple-agent-test/actions/runs/20108067089",
+    "target_leaderboard": "rishibalakrishnan/gh-app-green-agent-test",
+    "timestamp": "2025-12-10T17:48:55Z"
+  },
+  "participants": {
+    "con_debater": "019b0436-1de0-7333-8837-56cb9b416012",
+    "pro_debater": "019b0436-1de0-7333-8837-56cb9b416012"
+  },
+  "results": [
+    {
+      "detail": {
+        "con_debater": {
+          "argument_arrangement": 1.0,
+          "argument_clarity": 0.9,
+          "emotional_appeal": 0.8,
+          "relevance_to_topic": 1.0,
+          "total_score": 3.7
+        },
+        "pro_debater": {
+          "argument_arrangement": 1.0,
+          "argument_clarity": 0.9,
+          "emotional_appeal": 0.8,
+          "relevance_to_topic": 1.0,
+          "total_score": 3.7
+        },
+        "reason": "Both sides presented exceptionally clear and well-arranged arguments, demonstrating full relevance to the debate topic and a good degree of emotional appeal. The Pro side clearly laid out its three pillars in favor of remote work, making a strong affirmative case. However, the Con side was slightly more effective in its opening. The Con not only presented its own strong points but also directly and systematically challenged each of the Pro's foundational arguments, framing them as 'myths' or 'cherry-picked data.' This proactive refutation, combined with its own distinct arguments about collaboration, structure, and social interaction, created a more challenging and compelling initial stance, effectively undermining the Pro's position from the outset and setting a stronger framework for the debate.",
+        "winner": "con_debater"
+      },
+      "winner": "con_debater"
+    }
+  ]
+}
