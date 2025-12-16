@@ -1,0 +1,29 @@
+{
+  "participants": {
+    "con_debater": "019b0436-1de0-7333-8837-56cb9b416012",
+    "pro_debater": "019b0436-1de0-7333-8837-56cb9b416012"
+  },
+  "results": [
+    {
+      "detail": {
+        "con_debater": {
+          "argument_arrangement": 0.9,
+          "argument_clarity": 0.9,
+          "emotional_appeal": 0.7,
+          "relevance_to_topic": 1.0,
+          "total_score": 3.5
+        },
+        "pro_debater": {
+          "argument_arrangement": 0.9,
+          "argument_clarity": 0.9,
+          "emotional_appeal": 0.8,
+          "relevance_to_topic": 1.0,
+          "total_score": 3.6
+        },
+        "reason": "Both debaters presented strong, clear, and relevant arguments. The Pro side edged out the Con primarily on Emotional Appeal. While both invoked values and made their cases compelling, the Pro side's language regarding 'soul-crushing commute,' 'relic of a bygone era,' and empowering 'autonomy' resonated slightly more powerfully with a modern workforce's aspirations for flexibility and reduced stress. The Con's points about collaboration and culture are valid, but its emotional framing of 'isolation and disconnect' felt slightly less impactful than the Pro's emphasis on individual well-being and freedom from traditional constraints. In terms of clarity, arrangement, and relevance, both were exemplary, demonstrating a solid grasp of debate principles and direct engagement with the topic.",
+        "winner": "pro_debater"
+      },
+      "winner": "pro_debater"
+    }
+  ]
+}
